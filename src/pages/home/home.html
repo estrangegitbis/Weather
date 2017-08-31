@@ -1,16 +1,18 @@
-<ion-content>
-  <div>
+<ion-content padding>
+  <div text-center class="overlay">
     <label class="item-input">
       <span class="input-label city">Ville :</span>
       <input type="text" placeholder="Paris,fr" [(ngModel)]="search">
     </label>
   </div>
-  <button ion-button round outline (click)="loadWeather(search)">Search</button>
-  <div *ngIf="state">
+  <div text-center>
+    <button ion-button round outline color="darkBlue" (click)="loadWeather(search)">Search</button>
+  </div>
+  <div *ngIf="state" class="forecast">
     <img src="{{weatherData.icon}}"/>
-    <label>{{weatherData.main}}</label>
-    <div>{{weatherData.city}}</div>
-    <div>{{weatherData.description}}</div>
-    <div>{{weatherData.temp}} °C</div>
+    <label class="bigText">{{weatherData.main}}</label>
+    <div class="mainText">{{weatherData.city}}</div>
+    <div class="mainText">{{weatherData.description}}</div>
+    <div class="bigText">{{weatherData.temp}} °C</div>
   </div>
 </ion-content>
