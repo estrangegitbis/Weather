@@ -1,14 +1,16 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <div>
+    <label class="item-input">
+      <span class="input-label city">Ville :</span>
+      <input type="text" placeholder="Paris,fr" [(ngModel)]="search">
+    </label>
+  </div>
+  <button ion-button round outline (click)="loadWeather(search)">Search</button>
+  <div *ngIf="state">
+    <img src="{{weatherData.icon}}"/>
+    <label>{{weatherData.main}}</label>
+    <div>{{weatherData.city}}</div>
+    <div>{{weatherData.description}}</div>
+    <div>{{weatherData.temp}} °C</div>
+  </div>
 </ion-content>
