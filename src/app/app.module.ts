@@ -7,7 +7,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherService } from "./weather.service";
+
+import { Geolocation} from "@ionic-native/geolocation";
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import {HttpClientModule} from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    WeatherService,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
